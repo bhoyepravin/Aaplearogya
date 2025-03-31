@@ -5,16 +5,20 @@ import Section3 from "./Section3";
 import Section4 from "./Section4";
 import Herosectionservices from "./Herosectionservices";
 import Herocounter from "./Herocounter";
+import Faq from "./Faq";
+import Feedback from "./Feedback";
 
 const Home = () => {
   return (
     <div>
       <Herosection />
-      <Section2 />
-      <Section3 />
       <Section4 />
+      <Section3 />
       <Herosectionservices />
       <Herocounter />
+      <Feedback />
+      <Section2 />
+      <Faq />
     </div>
   );
 };

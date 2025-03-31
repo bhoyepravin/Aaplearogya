@@ -1,80 +1,110 @@
-import { useState } from "react";
-import { Button, Modal } from "antd";
-import { FaPlay } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  serviceImg42,
+  serviceImg15,
+  serviceImg41,
+  serviceImg17,
+} from "../../../public/assets/index";
+
 const Herosection = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [heroContent, setHeroContent] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Replace API call with dummy data
+    const dummyData = [
+      {
+        image: serviceImg42,
+        title: "Your Health Is Our Responsibility",
+        description:
+          "We are dedicated to providing top-quality home healthcare services, ensuring comfort and care for you and your loved ones.",
+      },
+      {
+        image: serviceImg15,
+        title: "",
+        description: "",
+      },
+      {
+        image: serviceImg41,
+        title: "",
+        description: "",
+      },
+      {
+        image: serviceImg17,
+      },
+    ];
+
+    setHeroContent(dummyData);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [currentIndex, heroContent]);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + heroContent.length) % heroContent.length
+    );
+  };
+
+  if (heroContent.length === 0) return null;
+
+  const { image, title, description } = heroContent[currentIndex];
 
   return (
-    <div
-      className="relative w-full h-screen bg-cover bg-center flex flex-col md:flex-row items-center justify-center md:justify-start px-6 md:px-16"
-      style={{
-        backgroundImage: "url('src/assets/Images/patientcarenurse.jpg')",
-      }}
-    >
-      {/* Text Section */}
-      <div className="text-center md:text-left">
-        <motion.h1
-          className="text-2xl sm:text-3xl md:text-5xl font-bold text-blue-950 leading-snug"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          We Provide Home <br className="hidden md:block" /> Care Service For{" "}
-          <br className="hidden md:block" />
-          Your Family
-        </motion.h1>
+    <div className="relative shadow-2xl w-full h-[550px] md:h-[650px] flex items-center justify-center text-white overflow-hidden  ">
+      <motion.div
+        key={image}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 w-full h-full bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black/50"
+        style={{
+          backgroundImage: `url(${image})`,
+        }}
+      ></motion.div>
 
+      <button onClick={prevImage} className="absolute left-10 md:left-20">
+        <ChevronLeft className="text-white w-6 h-6" />
+      </button>
+
+      <button onClick={nextImage} className="absolute right-10 md:right-20">
+        <ChevronRight className="text-white w-6 h-6" />
+      </button>
+
+      <motion.div
+        className="relative z-10 text-center max-w-4xl mx-auto px-6"
+        key={title}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.h1
+          className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-wide text-white"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          {title}
+        </motion.h1>
         <motion.p
-          className="text-sm sm:text-base md:text-lg text-blue-950 mt-3"
+          className="md:mt-4 text-lg md:text-xl text-gray-200"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
         >
-          We provide professional and personalized home care services{" "}
-          <br className="hidden md:block" />
-          to ensure your loved ones receive the attention, support,{" "}
-          <br className="hidden md:block" />
-          and medical assistance they need—all in the comfort of their home.{" "}
-          <br className="hidden md:block" />
-          Our trained caregivers are dedicated to improving their quality{" "}
-          <br className="hidden md:block" />
-          of life with compassion and expertise.
+          {description}
         </motion.p>
-
-        {/* Button & Play Icon Section */}
-        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-6">
-          {/* Contact Us Button */}
-          <button className="bg-red-500 hover:bg-blue-500 text-white font-semibold rounded-full px-6 py-4  border-none text-3xl">
-            Contact Us
-          </button>
-
-          {/* Video Play Icon */}
-          <div className="relative flex items-center justify-center group w-14 h-14 md:w-16 md:h-16 border-2 border-red-500  hover:bg-red-500  rounded-full cursor-pointer transition transform group-hover:scale-110">
-            <FaPlay
-              className="text-white text-4xl md:text-5xl"
-              onClick={() => setIsModalVisible(true)}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Video Modal */}
-      <Modal
-        title="Watch Video"
-        open={isModalVisible}
-        footer={null}
-        onCancel={() => setIsModalVisible(false)}
-        centered
-      >
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          allowFullScreen
-        ></iframe>
-      </Modal>
+      </motion.div>
     </div>
   );
 };

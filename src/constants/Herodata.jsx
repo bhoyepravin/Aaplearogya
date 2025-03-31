@@ -1,12 +1,12 @@
 const Herodata = {
   aboutUs: {
     title: "About Us",
-    subtitle: "Learn more about our journey",
+    subtitle: "Compassionate home healthcare and rentals.",
     backgroundImage: "src/assets/Images/img4.avif",
   },
   services: {
     title: "Our Services",
-    subtitle: "We provide top-notch solutions",
+    subtitle: "Complete home healthcare solutions available.",
     backgroundImage: "src/assets/Images/img4.avif",
   },
   appointment: {
@@ -16,17 +16,17 @@ const Herodata = {
   },
   ourTeam: {
     title: "Meet Our Team",
-    subtitle: "Our expert professionals",
+    subtitle: "Skilled professionals dedicated to care.",
     backgroundImage: "src/assets/Images/img4.avif",
   },
-  blog: {
-    title: "Our Blog",
-    subtitle: "Latest updates & articles",
+  gallery: {
+    title: "Gallery",
+    subtitle: "Explore our care.",
     backgroundImage: "src/assets/Images/img4.avif",
   },
   contact: {
     title: "Contact Us",
-    subtitle: "Get in touch with us",
+    subtitle: "Reach us for expert care.",
     backgroundImage: "src/assets/Images/img4.avif",
   },
 };

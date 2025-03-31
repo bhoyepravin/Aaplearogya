@@ -19,8 +19,9 @@ const Footer = () => {
               Aple Arogya Health Care Center
             </h2>
             <p className="text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod.
+              "We provide compassionate home healthcare services and
+              high-quality medical equipment rentals to ensure the best care for
+              your loved ones. Your health and comfort are our priority!"
             </p>
           </div>
 
@@ -29,7 +30,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-gray-400 hover:text-white">
+                <a href="/aboutus" className="text-gray-400 hover:text-white">
                   About Us
                 </a>
               </li>
@@ -39,20 +40,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/appointment"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Appointment
+                <a href="/ourteam" className="text-gray-400 hover:text-white">
+                  Our Team
                 </a>
               </li>
               <li>
-                <a href="/blog" className="text-gray-400 hover:text-white">
-                  Blog
+                <a href="/gallery" className="text-gray-400 hover:text-white">
+                  Gallery
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-400 hover:text-white">
+                <a href="/contactus" className="text-gray-400 hover:text-white">
                   Contact
                 </a>
               </li>
@@ -64,33 +62,27 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/privacy-policy"
-                  className="text-gray-400 hover:text-white"
-                >
+                <a href="#" className="text-gray-400 hover:text-white">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 hover:text-white">
                   Terms and Conditions
                 </a>
               </li>
               <li>
-                <a
-                  href="/disclaimer"
-                  className="text-gray-400 hover:text-white"
-                >
+                <a href="#" className="text-gray-400 hover:text-white">
                   Disclaimer
                 </a>
               </li>
               <li>
-                <a href="/support" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 hover:text-white">
                   Support
                 </a>
               </li>
               <li>
-                <a href="/faq" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 hover:text-white">
                   FAQ
                 </a>
               </li>
@@ -100,10 +92,11 @@ const Footer = () => {
           {/* Work Hours Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Work Hours</h3>
-            <p className="text-gray-400">9 AM – 5 PM , Monday – Saturday</p>
+            <p className="text-gray-400">10:00 AM – 6:00 PM , Mon – Sat</p>
             <p className="text-gray-400 mt-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
+              "Dedicated to providing expert home healthcare and reliable
+              medical equipment rentals, ensuring comfort, care, and peace of
+              mind for every patient."
             </p>
           </div>
         </div>
@@ -163,7 +156,7 @@ const Footer = () => {
               <FaFacebook />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.facebook.com/share/1CBn9ZtYrf/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 text-2xl"
@@ -179,7 +172,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://jsdl.in/RSL-FWD1743152698"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 text-2xl"
@@ -203,7 +196,7 @@ const Footer = () => {
             Copyright © 2025. All rights reserved.
           </p>
           <p className="text-gray-400 mt-2">
-            Website created by{" "}
+            Developed by{" "}
             <a href="https://www.richsol.com/" className="hover:text-white">
               RICH System Solutions Pvt. Ltd.
             </a>

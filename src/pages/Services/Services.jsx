@@ -6,7 +6,7 @@ import services from "../../constants/Services";
 
 const Services = () => {
   const navigate = useNavigate();
-
+  console.log(services);
   return (
     <div>
       <PageSection page="services" />
@@ -18,14 +18,16 @@ const Services = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="cursor-pointer"
-            onClick={() => navigate(`/service/${service.id}`)}
+            onClick={() =>
+              navigate(`/services/${service.id}`, { state: service })
+            }
           >
             <Card
               hoverable
               cover={
                 <img
                   alt={service.title}
-                  src={service.image}
+                  src={service.images[0]} // First image as cover
                   className="h-48 object-cover"
                 />
               }

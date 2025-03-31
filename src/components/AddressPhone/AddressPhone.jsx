@@ -19,7 +19,7 @@ const AddressPhone = () => {
               <FaLocationDot className="ml-2 text-lg sm:text-xl flex-shrink-0" />
               <span className="text-sm sm:text-base">
                 Shiv Kripa Row House, Maruti Sankul, 1, Madhushil Rd, <br />
-                Ambedkar Nagar, Chunchale, Nashik-422213, India
+                Ambedkar Nagar,Chunchale,Nashik - 422213, India
               </span>
             </a>
           </div>

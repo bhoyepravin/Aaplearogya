@@ -1,5 +1,6 @@
 import React from "react";
 import Herodata from "../../constants/Herodata";
+import { serviceImg21 } from "../../../public/assets";
 
 const PageSection = ({ page }) => {
   const data = Herodata[page] || Herodata.aboutUs;
@@ -8,7 +9,7 @@ const PageSection = ({ page }) => {
     <div
       className="relative h-[300px] flex items-center justify-center text-white"
       style={{
-        backgroundImage: `url(${data.backgroundImage})`,
+        backgroundImage: `url(${serviceImg21})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

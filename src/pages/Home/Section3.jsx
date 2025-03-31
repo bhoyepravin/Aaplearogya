@@ -1,6 +1,13 @@
 import React from "react";
 import { CheckCircleOutlined, SmileOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
+import {
+  serviceImg2,
+  serviceImg3,
+  takecare1,
+  takecare2,
+} from "../../../public/assets/index";
 
 const Herosection3 = ({ happyClients }) => {
   return (
@@ -9,12 +16,12 @@ const Herosection3 = ({ happyClients }) => {
       <div className="relative w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
         <div className="relative flex gap-4 flex-col md:flex-row items-center">
           <img
-            src="/src/assets/Images/img1.jpeg"
+            src={serviceImg2}
             alt="Image 1"
             className="w-50 h-50 md:w-80 md:h-100 rounded-2xl border-4 border-white shadow-lg"
           />
           <img
-            src="/src/assets/Images/img2.jpeg"
+            src={serviceImg3}
             alt="Image 2"
             className="w-50 h-50 md:w-80 md:h-100 rounded-2xl border-4 border-white shadow-lg"
           />

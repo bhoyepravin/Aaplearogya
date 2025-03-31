@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import AddressPhone from "../AddressPhone/AddressPhone";
+import { navLogo } from "../../../public/assets";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,19 +13,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <AddressPhone />
       <nav className="bg-white shadow-md">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <a href="/" className="flex items-center">
-                <img
-                  src="/public/assets/logo.png"
-                  alt="NURSERA Logo"
-                  className="h-10 w-auto"
-                />
+                <img src={navLogo} alt="NURSERA Logo" className="h-10 w-auto" />
                 <span className="text-xl font-bold text-gray-700 ml-2">
-                  Aaple Aarogya Health Care Center
+                  Aple Arogya Health Care Center
                 </span>
               </a>
             </div>
@@ -38,17 +34,17 @@ const Navbar = () => {
               <a href="/services" className="text-gray-700 hover:text-blue-500">
                 Services
               </a>
-              <a
+              {/* <a
                 href="/appointment"
                 className="text-gray-700 hover:text-blue-500"
               >
                 Appointment
-              </a>
+              </a> */}
               <a href="/ourteam" className="text-gray-700 hover:text-blue-500">
                 Our Team
               </a>
-              <a href="/blog" className="text-gray-700 hover:text-blue-500">
-                Blog
+              <a href="/gallery" className="text-gray-700 hover:text-blue-500">
+                Gallery
               </a>
               <a
                 href="/contactus"
@@ -97,12 +93,12 @@ const Navbar = () => {
             >
               Services
             </a>
-            <a
+            {/* <a
               href="/appointment"
               className="block text-white hover:text-gray-200 transition-transform transform hover:scale-105"
             >
               Appointment
-            </a>
+            </a> */}
             <a
               href="/ourteam"
               className="block text-white hover:text-gray-200 transition-transform transform hover:scale-105"
@@ -110,10 +106,10 @@ const Navbar = () => {
               Our Team
             </a>
             <a
-              href="/blog"
+              href="/gallery"
               className="block text-white hover:text-gray-200 transition-transform transform hover:scale-105"
             >
-              Blog
+              Gallery
             </a>
             <a
               href="/contactus"
@@ -124,6 +120,8 @@ const Navbar = () => {
           </div>
         </motion.div>
       </nav>
+
+      <AddressPhone />
     </div>
   );
 };
